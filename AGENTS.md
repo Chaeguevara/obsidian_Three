@@ -2,9 +2,18 @@
 
 ## Project overview
 
+- Main scope: run Three.js experiences inside Obsidian.
 - Target: Obsidian Community Plugin (TypeScript → bundled JavaScript).
 - Entry point: `main.ts` compiled to `main.js` and loaded by Obsidian.
 - Required release artifacts: `main.js`, `manifest.json`, and optional `styles.css`.
+
+## Git commit best practices
+
+- Keep commits focused on a single logical change; avoid mixing unrelated edits.
+- Write imperative, present-tense subject lines under 50 characters (e.g., `Add Three.js demo view`).
+- Add concise body context when the *why* or *how* is not obvious from the diff.
+- Reference relevant issues or tasks in the body instead of the subject when needed.
+- Run linting/tests before committing so the tree stays green for collaborators.
 
 ## Environment & tooling
 
