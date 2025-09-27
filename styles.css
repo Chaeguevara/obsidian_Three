@@ -4,9 +4,15 @@
 	height: 100%;
 }
 
-.threejs-view .threejs-canvas {
+.threejs-force-graph {
+	position: relative;
 	flex: 1;
-	display: block;
 	width: 100%;
 	height: 100%;
+}
+
+.threejs-force-graph canvas {
+	display: block;
+	width: 100% !important;
+	height: 100% !important;
 }

@@ -6,6 +6,26 @@
 - Target: Obsidian Community Plugin (TypeScript → bundled JavaScript).
 - Entry point: `main.ts` compiled to `main.js` and loaded by Obsidian.
 - Required release artifacts: `main.js`, `manifest.json`, and optional `styles.css`.
+- Architectural pattern: MVVM-style layers (views + view-models backed by modular services).
+
+## Source layout (proposed)
+
+```
+src/
+  main.ts            # Plugin bootstrap, registers services, commands, views
+  core/              # Shared infrastructure (logging, disposables, service locator)
+  settings/          # Settings schema, defaults, settings tab view-model/UI
+  data/              # Vault graph loaders, watchers, data caches
+  render/            # Three.js/ForceGraph orchestration, resource managers
+  views/             # MVVM view folders (graph/panorama/etc.) exposing ItemViews
+  ui/                # Reusable UI components (modals, HUD, overlays)
+  utils/             # Math helpers, type guards, constants
+```
+
+- Views stay thin (Obsidian `ItemView` classes) and talk only to their view-model.
+- View-models orchestrate data services + render services; expose pure data/events back to the view.
+- Services handle vault access, scene management, and cleanup; all implement a disposable contract.
+
 
 ## Git commit best practices
 
