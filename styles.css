@@ -1,18 +1,125 @@
-.threejs-view {
+.graph-visualizer-view {
 	display: flex;
 	width: 100%;
 	height: 100%;
 }
 
-.threejs-force-graph {
+.graph-visualizer-panel {
+	flex: 0 0 240px;
+	padding: 16px;
+	box-sizing: border-box;
+	background-color: var(--background-secondary);
+	color: var(--text-normal);
+	overflow-y: auto;
+	border-right: 1px solid var(--background-modifier-border);
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.graph-visualizer-panel-title {
+	margin: 0;
+	font-size: 16px;
+}
+
+.graph-visualizer-panel-description {
+	margin: 0;
+	font-size: 12px;
+	color: var(--text-muted);
+}
+
+.graph-visualizer-panel-subtitle {
+	font-weight: 600;
+	font-size: 13px;
+}
+
+.graph-visualizer-tag-list {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.graph-visualizer-tag-row {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.graph-visualizer-tag-label {
+	flex: 1;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.graph-visualizer-tag-actions {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.graph-visualizer-tag-color-input {
+	width: 36px;
+	height: 28px;
+	padding: 0;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+}
+
+.graph-visualizer-tag-reset {
+	padding: 4px 8px;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.graph-visualizer-tag-reset.is-disabled {
+	opacity: 0.5;
+	cursor: default;
+}
+
+.graph-visualizer-empty {
+	font-size: 12px;
+	color: var(--text-muted);
+}
+
+.graph-visualizer-motion-section {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.graph-visualizer-panel-button {
+	padding: 6px 10px;
+	font-size: 12px;
+	cursor: pointer;
+	align-self: flex-start;
+}
+
+.graph-visualizer-force-graph {
 	position: relative;
 	flex: 1;
 	width: 100%;
 	height: 100%;
+	touch-action: none;
 }
 
-.threejs-force-graph canvas {
+.graph-visualizer-force-graph canvas {
 	display: block;
 	width: 100% !important;
 	height: 100% !important;
+	touch-action: none;
+}
+
+@media (max-width: 768px) {
+	.graph-visualizer-view {
+		flex-direction: column;
+	}
+
+	.graph-visualizer-panel {
+		flex: 0 0 auto;
+		width: 100%;
+		border-right: none;
+		border-bottom: 1px solid var(--background-modifier-border);
+	}
 }

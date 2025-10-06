@@ -1,6 +1,6 @@
-# Obsidian Sample Plugin
+# Three JS Graph Visualizer
 
-This is a sample plugin for Obsidian (https://obsidian.md).
+Three JS Graph Visualizer turns your Obsidian vault into an interactive 3D force-directed graph powered by Three.js.
 
 This project uses TypeScript to provide type checking and documentation.
 The repo depends on the latest plugin API (obsidian.d.ts) in TypeScript Definition format, which contains TSDoc comments describing what it does.
